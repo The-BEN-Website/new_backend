@@ -20,7 +20,7 @@ class CustomAccountManager(BaseUserManager):
         if other_fields.get('is_active') is not True:
             raise ValueError('SuperUser must be assigned to is_active = True')
         
-        return self.create(self, email, user_name, first_name, password, **other_fields)
+        return self.create_user(email, user_name, first_name, password, **other_fields)
     
     def create_user(self, email, user_name, first_name, password, **other_fields):
         if not email:
