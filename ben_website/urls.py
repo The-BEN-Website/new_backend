@@ -23,7 +23,10 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('core.urls')),
+    path('api/', include('core_api.urls', namespace='core_api')),
     # path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     # path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/user/', include('user.urls', namespace='user')),
 ]
+
