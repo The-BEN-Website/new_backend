@@ -131,6 +131,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'user.NewUser'
 
+
+
 # REST_FRAMEWORK = {
 #     'DEFAULT_AUTHENTICATION_CLASSES': (
 #         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -152,3 +154,9 @@ AUTH_USER_MODEL = 'user.NewUser'
 #     "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
 #     "TOKEN_TYPE_CLAIM": "token_type",
 # }
+
+CORS_ALLOWED_ORIGIN = [
+    "http://127.0.0.1:8000",
+    "http://localhost:5173",
+    "https://testyapi1.vercel.app",
+]

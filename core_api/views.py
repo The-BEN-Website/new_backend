@@ -1,6 +1,7 @@
 from rest_framework import generics
 from core.models import Message
 from .serializers import MessageSerializer
+from .permissions import Pub
 
 
 
@@ -18,9 +19,12 @@ class PostDetailview(generics.RetrieveAPIView):
 class PostCreateview(generics.CreateAPIView):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
+    permission_classes = [Pub]
 
-    
+
+
 class PostManageView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
+    permission_classes = [Pub]
 
